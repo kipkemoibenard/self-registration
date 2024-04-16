@@ -1,0 +1,39 @@
+<p-menubar>
+  <a href="#" (click)="onClick()"><button pButton label="Logout" icon="pi pi-power-off"
+      [routerLink]="['/logout']"></button></a>
+</p-menubar>
+<h2>USER PAGE</h2>
+
+<!-- <p-table [tableStyle]="{'min-width': '50rem'}" responsiveLayout="stack" [breakpoint]="'960px'">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>User Name</th>
+      <th>Role</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" *ngFor="let user of loggedUser">
+
+    <tr>
+      {{user.id}}
+      {{user.firstname}}
+      {{user.lastname}}
+      {{user.username}}
+      {{user.role}}
+    </tr> -->
+    
+
+    <!-- <tr>
+          <td *ngIf="user.username.length>0">{{user.id}}</td>username
+          <td *ngIf="user.username.length>0">{{user.firstname}}</td>firstname
+          <td *ngIf="user.username.length>0">{{user.lastname}}</td>
+          <td *ngIf="user.username.length>0">{{user.username}}</td>
+          <td *ngIf="user.username.length>0">{{user.role}}</td>
+      </tr> -->
+  <!-- </ng-template>
+</p-table> -->
+<div>
+  <li>firstname: {{loggedUser?.firstname}}</li>
+</div>

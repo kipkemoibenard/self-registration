@@ -1,0 +1,114 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "firstname": "John",
+        "lastname": "Nyakudi",
+        "username": "jonyaundi@gmail.com",
+        "role": "user",
+        "password": "1234"
+      },
+      {
+        "id": 2,
+        "firstname": "Robert",
+        "lastname": "Obina",
+        "username": "robert@gmail.com",
+        "role": "user",
+        "password": "1234"
+      },
+      {
+        "id": 3,
+        "firstname": "Kelvin",
+        "lastname": "Wangui",
+        "username": "admin@gmail.com",
+        "role": "admin",
+        "password": "1111"
+      },
+      {
+        "id": 4,
+        "firstname": "Florence",
+        "lastname": "Cherono",
+        "username": "cherono@gmail.com",
+        "role": "user",
+        "password": "1234"
+      },
+      {
+        "id": 5,
+        "firstname": "Tabitha",
+        "lastname": "May",
+        "username": "maytabitha@yahoo.com",
+        "role": "admin",
+        "password": "2222"
+      },
+      {
+        "id": 6,
+        "firstname": "Jackton",
+        "lastname": "Odhiambo",
+        "username": "jackton@ktda.com",
+        "role": "user",
+        "password": "1234"
+      },
+      {
+        "id": 7,
+        "firstname": "Badi",
+        "lastname": "Major",
+        "username": "major@gmail.com",
+        "role": "user",
+        "password": "1234"
+      },
+      {
+        "id": 8,
+        "firstname": "Baggule",
+        "lastname": "Kisolbei",
+        "username": "bagule@gmail.com",
+        "role": "user"
+      },
+      {
+        "id": 9,
+        "firstname": "Victor",
+        "lastname": "bei",
+        "username": "vic@gmail.com",
+        "role": "user"
+      },
+      {
+        "id": 10,
+        "firstname": "n",
+        "lastname": "udi",
+        "username": "adminudi@yahoo.com",
+        "role": "user",
+        "password": "2448"
+      },
+      {
+        "id": 11,
+        "firstname": "nghgh",
+        "lastname": "udidf",
+        "username": "adminvcvudi@yahoo.com",
+        "role": "user",
+        "password": "2448"
+      },
+      {
+        "id": 12,
+        "firstname": "nhghghgh",
+        "lastname": "udidf",
+        "username": "adminvc876vudi@yahoo.com",
+        "role": "user",
+        "password": "2448"
+      },
+      {
+        "id": 13,
+        "firstname": "v6",
+        "lastname": "udidf",
+        "username": "Yoghvc876vudi@yahoo.com",
+        "role": "user",
+        "password": "2448"
+      },
+      {
+        "id": 16,
+        "firstname": "John",
+        "lastname": "Nyakudi",
+        "username": "jonyaundi@gmail.com",
+        "role": "user",
+        "password": "1234"
+      }
+    ]
+  }

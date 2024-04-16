@@ -1,0 +1,25 @@
+<p-menubar>
+    <a href="#" (click)="onClick"><button pButton label="Logout" icon="pi pi-power-off"  [routerLink]="['/logout']"></button ></a>
+</p-menubar>
+<h2>ADMIN PAGE</h2>
+<p-table [value]="userDetails" [tableStyle]="{'min-width': '50rem'}"
+responsiveLayout="stack" [breakpoint]="'960px'" [paginator]="true" [rows]="5"> 
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>User Name</th>
+          <th>Role</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-userDetails>
+      <tr>
+          <td>{{userDetails.id}}</td>
+          <td>{{userDetails.firstname}}</td>
+          <td>{{userDetails.lastname}}</td>
+          <td>{{userDetails.username}}</td>
+          <td>{{userDetails.role}}</td>
+      </tr>
+  </ng-template>
+</p-table>

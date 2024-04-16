@@ -1,0 +1,18 @@
+<h2>Login Page</h2><br>
+<div class="login">
+  <form id="login" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <span class="p-float-label">
+      <input id="float-input" type="text" pInputText formControlName="username">
+      <label for="float-input">Username</label>
+    </span>
+
+    <br><br>
+
+    <span class="p-float-label">
+      <input id="float-input" type="password" pInputText formControlName="password">
+      <label for="float-input">Password</label>
+    </span>
+    <br><br>
+    <button pButton type="submit" label="Login" form="login" [disabled]="loginForm.invalid"></button>
+  </form>
+</div>
