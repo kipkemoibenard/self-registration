@@ -156,6 +156,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
     else{
       this.service.register(regDetails).subscribe((res) =>{
+        this.visible = false;
         this.toastr.success('Registered')
       })
     }
