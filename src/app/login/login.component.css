@@ -132,6 +132,10 @@ a {
   .signup-link:hover {
     text-decoration: none; /* Remove underline on hover */
   }
+
+  .login-link:hover{
+    background-color: azure;
+  }
   
   
   

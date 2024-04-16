@@ -125,6 +125,14 @@
       "role": "user",
       "password": "1234",
       "id": 18
+    },
+    {
+      "firstname": "Haron",
+      "lastname": "Kamau",
+      "username": "haron@gmail.com",
+      "role": "user",
+      "password": "22222",
+      "id": 19
     }
   ]
 }
