@@ -14,5 +14,52 @@
     </span>
     <br><br>
     <button pButton type="submit" label="Login" form="login" [disabled]="loginForm.invalid"></button>
+    <div class="form-group" style="text-align: center;">
+      <span>Not registered?</span>
+      <a (click)="showDialog()" class="login-link">SignUp</a>
+    </div>
   </form>
 </div>
+
+
+<p-dialog header="Header" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+  <div class="main">
+    <div class="container">
+        <div style="justify-content: center; margin: 20px; font-size: 20px;">Service provider registration</div>
+        <!-- registration form -->
+        <form [formGroup]="registrationForm" class="login-form">
+            <div class="row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" pInputText formControlName="firstName" id="firstName" />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" pInputText formControlName="lastName" id="lastName" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" pInputText formControlName="email" id="email" />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" pInputText formControlName="password" id="password" />
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" pInputText formControlName="confirmPassword" id="confirmPassword" />
+              </div>
+            </div>
+            <div class="form-group" style="padding-top: 20px;">
+              <p-button label="Register" icon="pi pi-save" (click)="register()"></p-button>
+            </div>
+          </form>
+          
+        <!-- registration form end  -->
+    </div>
+</div>
+
+
+</p-dialog>

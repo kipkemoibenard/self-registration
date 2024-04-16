@@ -11,18 +11,21 @@ import { UserpageComponent } from './userpage.component';
 // ];
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: UserpageComponent,
+  //       canActivate: [AuthGuard],
+  //       data: {
+  //         expectedRoles: ['users'],
+  //       },
+  //     },
+  //   ],
+  // },
   {
-    path: '',
-    children: [
-      {
-        path: '',
-        component: UserpageComponent,
-        canActivate: [AuthGuard],
-        data: {
-          expectedRoles: ['users'],
-        },
-      },
-    ],
+    path: '', component: UserpageComponent
   },
 ];
 

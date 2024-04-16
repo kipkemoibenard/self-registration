@@ -23,6 +23,7 @@ import { enableProdMode } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
 import { JwtInterceptor } from './interceptor/jwt.interceptor';
+import { DialogModule } from 'primeng/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,7 @@ import { JwtInterceptor } from './interceptor/jwt.interceptor';
     TableModule,
     PaginatorModule,
     HttpClientModule,
+    DialogModule,
     
   ],
   providers: [

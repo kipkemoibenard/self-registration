@@ -19,6 +19,7 @@ import { FormsModule} from '@angular/forms';
 import { JwtInterceptor } from '../interceptor/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
+import { DialogModule } from 'primeng/dialog';
 
 
 
@@ -46,7 +47,8 @@ import { RouterLink } from '@angular/router';
     PaginatorModule,
     FormsModule,
     BrowserModule,
-    RouterLink
+    RouterLink,
+    DialogModule
     
   ],
   providers: [

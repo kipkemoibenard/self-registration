@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router, RouterLink, withHashLocation } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -6,13 +6,16 @@ import { AuthService } from '../service/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Todo } from '../todo/todo';
 import { Token } from '@angular/compiler';
+import { Password } from 'primeng/password';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit, OnDestroy {
+  visible: boolean = false;
+  registrationForm!: FormGroup
   constructor(private builder: FormBuilder, private toastr: ToastrService,
     public service: AuthService, private route: Router, private http: HttpClient) {
       this.service.getAllU().subscribe();
@@ -25,7 +28,9 @@ export class LoginComponent {
   //   password: ''
   // };
 
-
+  showDialog() {
+    this.visible = true;
+}
   loginForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
@@ -38,6 +43,16 @@ export class LoginComponent {
     lastname: '',
     role: ''
   };
+
+  getRegistrationForm() {
+    this.registrationForm = this.builder.group({
+      firstName: [''],
+      lastName: [''],
+      email: [''],
+      password: [''],
+      confirmPassword: [],
+    })
+  }
 
   getTodo() {
     this.service.getTodo(this.todo.id).subscribe((data) => (this.todo = data));
@@ -57,8 +72,13 @@ export class LoginComponent {
 
   ngOnInit(): void {
    this.service.setToken();
-   this.onLogin()
+   this.getRegistrationForm();
 
+
+   }
+
+   ngOnDestroy(): void {
+     
    }
 
   onLogin() {
@@ -87,7 +107,7 @@ export class LoginComponent {
           //   this.route.navigate(['admin'])
           // }
           // else{
-          //   this.toastr.success('Admin Login in first')
+          //   this.toastr.success('Admin Login first')
           //   this.route.navigate(['login'])
           // }
           
@@ -96,7 +116,7 @@ export class LoginComponent {
 
           this.toastr.success('User Login successfull');
           // console.log(this.route.navigate([`'http://localhost:3000/users'/${userdata.id}`]))
-          this.route.navigate([`http://localhost:3000/api/users/${userdata.id}`]);
+          this.route.navigate([`/users/${userdata.id}`]);
           console.log("user role is ", userdata.role + " user id is " + userdata.id)
           localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwibmFtZSI6IlVTRVIiLCJpYXQiOjEyMzR9.I_bvqxD4MpO99J1arja1EWbxpZitTDM3Yowjz2ylRZA")
         
@@ -118,6 +138,29 @@ export class LoginComponent {
     //   localStorage.setItem('token', res.token)
     // })
 
+  }
+
+  register(){
+    const formDets =  this.registrationForm.value
+    const regDetails = {
+      "firstname": formDets.firstName,
+      "lastname": formDets.lastName,
+      "username": formDets.email,
+      "role": "user",
+      "password": formDets.password,
+    }
+
+    if(formDets.password !== formDets.confirmPassword){
+      this.toastr.warning('Passowrd not matching')
+      return
+    }
+    else{
+      this.service.register(regDetails).subscribe((res) =>{
+        this.toastr.success('Registered')
+      })
+    }
+  
+    
   }
 }
 

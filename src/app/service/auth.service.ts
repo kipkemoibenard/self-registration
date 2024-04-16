@@ -59,6 +59,10 @@ export class AuthService {
     );
   }
 
+  register(data: any) {
+    return this.http.post(this.apiurl, data);
+  }
+
 
 
 }
